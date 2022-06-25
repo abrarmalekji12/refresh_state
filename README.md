@@ -39,7 +39,7 @@ Add refresh_state to your project's pubspec.yaml:
 
 
 ##### id:
-id will be used to identify refresher, multiple Refresher can have same id, but if given then all the Refreshers with same id will be notified.
+id will be used to identify refresher, multiple Refresher can have same id, but if given then all the Refreshers with same id will be notified
 
 #### initialData:
 initialData will be initial-data given in builder.
@@ -54,8 +54,8 @@ listener will be called when refresh is called.
 builder will be called when refresh is called.
 
 #### child:
-if only want to listen use child instead of builder, 
-builder and child can not be used together.
+if only want to listen use child instead of builder,
+builder and child can not be used together
 
 ## Call refresh function with ID from anywhere in the app to notify Refresher.
 
