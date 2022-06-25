@@ -1,4 +1,4 @@
-refresh_state provides state-management solution by eliminating redundant code, helps speed-up the development process.
+refresh_state provides state-management solution by eliminating redundant code, helps speed-up the development process
 
 ## Installation
 Add refresh_state to your project's pubspec.yaml:
