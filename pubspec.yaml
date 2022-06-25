@@ -1,6 +1,6 @@
 name: refresh_state
 description: Refresh state management gives devloper ease in state-management eliminating redundant code.
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/abrarmalekji12/refresh_state
 
 environment:
