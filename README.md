@@ -35,64 +35,56 @@ Add refresh_state to your project's pubspec.yaml:
                 },
               )
 
-### Required parameters
+### parameters
+
 
 ##### id:
 id will be used to identify refresher, multiple Refresher can have same id, but if given then all the Refreshers with same id will be notified.
 
-##### _imageBytes:
-Image bytes is use to draw image in device and if image not fits in device screen then we manage background color(if you have passed colorForWhiteSpace or else White background) in image cropping screen.
+#### initialData:
+initialData will be initial-data given in builder.
 
-##### _onImageStartLoading:
-This is a callback. you have to override and show dialog or etc when image cropping is in loading state.
+#### initialState:
+initialState will be initial-state given in builder.
 
-##### _onImageEndLoading:
-This is a callback. you have to override and hide dialog or etc when image cropping is ready to show result in cropping screen.
+#### listener:
+listener will be called when refresh is called.
 
-##### _onImageDoneListener:
-This is a callback. you have to override and you will get Uint8List as result.
+#### builder:
+builder will be called when refresh is called.
 
-## Optional parameters
+#### child:
+if only want to listen use child instead of builder, 
+builder and child can not be used together.
 
-##### ImageRatio:
-This property contains ImageRatio value. You can set the initialized aspect ratio when starting the cropper by passing a value of ImageRatio. default value is `ImageRatio.FREE`
+## Call refresh function with ID from anywhere in the app to notify Refresher.
 
-##### visibleOtherAspectRatios:
-This property contains boolean value. If this properties is true then it shows all other aspect ratios in cropping screen. default value is `true`.
-
-##### squareBorderWidth:
-This property contains double value. You can change square border width by passing this value.
-
-##### squareCircleColor:
-This property contains Color value. You can change square circle color by passing this value.
-
-#####  defaultTextColor:
-This property contains Color value. By passing this property you can set aspect ratios color which are unselected.
-
-##### selectedTextColor:
-This property contains Color value. By passing this property you can set aspect ratios color which is selected.
-
-##### colorForWhiteSpace:
-This property contains Color value. By passing this property you can set background color, if screen contains blank space.
+### refresh
+    refresh('abc', (state) {
+                  if (state == AppState.blue) {
+                    return AppState.red;
+                  } else if (state == AppState.red) {
+                    return AppState.green;
+                  } else {
+                    return AppState.blue;
+                  }
+                });
 
 
-## Note:
-For flutter web, copy worker.js from example folder to the project, else it will not work.
-The result returns in Uint8List. so it can be lost later, you are responsible for storing it somewhere permanent (if needed).
+### parameters
+
+#### id:
+id will be used to identify refresher, multiple Refresher can have same id, but if given then all the Refreshers with same id will be notified.
+
+#### state-callback
+state-callback will have old-state in argument, and new-state will be returned.
+
+#### data-callback
+data-callback will have old-data in argument, and new-data will be returned.
+
 
 ## Guideline for contributors
 Contribution towards our repository is always welcome, we request contributors to create a pull request to the develop branch only.
 
-## Guideline to report an issue/feature request
-It would be great for us if the reporter can share the below things to understand the root cause of the issue.
-- Library version
-- Code snippet
-- Logs if applicable
-- Device specification like (Manufacturer, OS version, etc)
-- Screenshot/video with steps to reproduce the issue
-
-## Library used
-- [Image](https://pub.dev/packages/image "Image")
-
 # LICENSE!
-Image Cropper is [MIT-licensed](https://github.com/Mindinventory/image_cropping/blob/master/LICENSE "MIT-licensed").
+refresh_state is [MIT-licensed](https://github.com/abrarmalekji12/refresh_state/blob/master/LICENSE "MIT-licensed").
